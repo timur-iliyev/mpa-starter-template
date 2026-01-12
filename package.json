@@ -1,0 +1,57 @@
+{
+  "name": "mpa-starter-template",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "type": "module",
+  "scripts": {
+    "start": "minista",
+    "build": "minista build",
+    "preview": "minista preview",
+    "lint:js": "eslint \"src/**/*.{js,jsx}\"",
+    "lint:js:fix": "eslint \"src/**/*.{js,jsx}\" --fix",
+    "lint:css": "stylelint \"src/**/*.{css,scss,sass,pcss}\"",
+    "lint:css:fix": "stylelint \"src/**/*.{css,scss,sass,pcss}\" --fix",
+    "format": "prettier . --check",
+    "format:fix": "prettier . --write",
+    "lint": "npm run lint:js && npm run lint:css && npm run format",
+    "lint:fix": "npm run lint:js:fix && npm run lint:css:fix && npm run format:fix"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "7.28.5",
+    "@babel/plugin-syntax-jsx": "7.27.1",
+    "@eslint/js": "9.39.2",
+    "eslint": "9.39.2",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-prettier": "5.5.4",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "7.0.1",
+    "globals": "17.0.0",
+    "minista": "3.1.12",
+    "postcss-preset-env": "10.6.0",
+    "postcss-pxtorem": "6.1.0",
+    "prettier": "3.7.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "1.97.1",
+    "stylelint": "16.26.1",
+    "stylelint-config-standard-scss": "16.0.0",
+    "stylelint-order": "7.0.1",
+    "stylelint-scss": "6.14.0",
+    "stylelint-selector-bem-pattern": "4.0.1"
+  },
+  "dependencies": {
+    "clsx": "2.1.1",
+    "imask": "7.6.1"
+  },
+  "browserslist": [
+    ">0.5%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
