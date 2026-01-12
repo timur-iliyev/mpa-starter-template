@@ -1,0 +1,62 @@
+.container {
+  width: 100%;
+  width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.hidden {
+  @include hide;
+}
+
+.hidden-laptop {
+  @include from-laptop {
+    display: none !important;
+  }
+}
+
+.visible-laptop {
+  @include to-laptop {
+    display: none !important;
+  }
+}
+
+.hidden-tablet {
+  @include from-tablet {
+    display: none !important;
+  }
+}
+
+.visible-tablet {
+  @include to-tablet {
+    display: none !important;
+  }
+}
+
+.hidden-mobile {
+  @include from-mobile {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include to-mobile {
+    display: none !important;
+  }
+}
+
+.hidden-mobile-s {
+  @include from-mobile-s {
+    display: none !important;
+  }
+}
+
+.visible-mobile-s {
+  @include to-mobile-s {
+    display: none !important;
+  }
+}

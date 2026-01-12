@@ -1,0 +1,37 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-grey: #808080;
+  --color-accent: #290058;
+
+  --color-grey-dark: hsl(from var(--color-grey) h s 10%);
+  --color-grey-light: hsl(from var(--color-grey) h s 85%);
+
+  --color-accent-dark: hsl(from var(--color-accent) h s 10%);
+  --color-accent-light: hsl(from var(--color-accent) h s 65%);
+
+  --border-width-m: 4px;
+  --border-width: 2px;
+  --border-width-s: 1px;
+
+  --border: var(--border-width) solid var(--color-white);
+
+  --border-radius-l: 12px;
+  --border-radius-m: 10px;
+  --border-radius: 8px;
+  --border-radius-s: 6px;
+  --border-radius-xs: 4px;
+
+  --font-family-base: 'Inter', 'san-serif';
+
+  --container-padding-x: #{fluid(
+      $container-padding-desktop,
+      $container-padding-mobile
+    )};
+  --container-width: #{fluid($desktop-width, $min-viewport-width)};
+
+  --section-gap: #{fluid($section-gap-desktop, $section-gap-mobile)};
+
+  --transition-duration: 0.2s;
+  --transition-duration-long: 0.4s;
+}

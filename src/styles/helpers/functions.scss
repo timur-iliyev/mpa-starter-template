@@ -1,0 +1,82 @@
+@use 'constants' as *;
+@use 'sass:math';
+
+// // –––––––––––––––––––– Fluid From: ––––––––––––––––––––
+@function fluid($max, $min, $from: 'desktop') {
+  $maxViewportWidth: $desktop-width;
+  $minViewportWidth: $min-viewport-width;
+
+  @if $from == 'laptop' {
+    $maxViewportWidth: $laptop-width;
+  } @else if $from == 'tablet' {
+    $maxViewportWidth: $tablet-width;
+  } @else if $from == 'mobile' {
+    $maxViewportWidth: $mobile-width;
+  }
+
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+  $maxWidth: math.div($maxViewportWidth, 16);
+  $minWidth: math.div($minViewportWidth, 16);
+
+  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+  $yAxisIntersections: -$minWidth * $slope + $minSize;
+
+  @return clamp(
+    #{$minSize * 1rem},
+    #{$yAxisIntersections * 1rem} + #{$slope * 100vw},
+    #{$maxSize * 1rem}
+  );
+}
+
+@function fluid-from-laptop($max, $min) {
+  @return fluid($max, $min, 'laptop');
+}
+
+@function fluid-from-tablet($max, $min) {
+  @return fluid($max, $min, 'tablet');
+}
+
+@function fluid-from-mobile($max, $min) {
+  @return fluid($max, $min, 'mobile');
+}
+
+// // –––––––––––––––––––– Fluid To: ––––––––––––––––––––
+@function fluid-to($max, $min, $to) {
+  $maxViewportWidth: $desktop-width;
+  $minViewportWidth: $min-viewport-width;
+
+  @if $to == 'laptop' {
+    $minViewportWidth: $laptop-width;
+  } @else if $to == 'tablet' {
+    $minViewportWidth: $tablet-width;
+  } @else if $to == 'mobile' {
+    $minViewportWidth: $mobile-width;
+  }
+
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+  $maxWidth: math.div($maxViewportWidth, 16);
+  $minWidth: math.div($minViewportWidth, 16);
+
+  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+  $yAxisIntersections: -$minWidth * $slope + $minSize;
+
+  @return clamp(
+    #{$minSize * 1rem},
+    #{$yAxisIntersections * 1rem} + #{$slope * 100vw},
+    #{$maxSize * 1rem}
+  );
+}
+
+@function fluid-to-laptop($max, $min) {
+  @return fluid-to($max, $min, 'laptop');
+}
+
+@function fluid-to-tablet($max, $min) {
+  @return fluid-to($max, $min, 'tablet');
+}
+
+@function fluid-to-mobile($max, $min) {
+  @return fluid-to($max, $min, 'mobile');
+}
