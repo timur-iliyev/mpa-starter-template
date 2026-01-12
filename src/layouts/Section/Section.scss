@@ -1,0 +1,12 @@
+.section {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(32, 24);
+  }
+
+  &__body {
+    display: grid;
+    row-gap: fluid(16, 12);
+  }
+}

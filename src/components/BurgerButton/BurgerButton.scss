@@ -1,0 +1,53 @@
+.burger-button {
+  --burgerButtonTextColor: var(--color-white);
+  --burgerButtonBgColor: var(--color-accent-light);
+
+  @include flex-center(true);
+  @include square-size(44px);
+
+  padding: 0;
+  color: var(--burgerButtonTextColor);
+  background-color: var(--burgerButtonBgColor);
+  border: var(--border);
+  border-color: currentColor;
+  border-radius: var(--border-radius);
+
+  @include hover {
+    --burgerButtonTextColor: var(--color-accent);
+    --burgerButtonBgColor: var(--color-white);
+
+    border-color: transparent;
+  }
+
+  &.is-active {
+    --burgerButtonTextColor: var(--color-accent);
+    --burgerButtonBgColor: var(--color-white);
+
+    .burger-button__line {
+      stroke-dasharray: 90 207;
+      stroke-dashoffset: -134;
+    }
+
+    .burger-button__line--2 {
+      stroke-dasharray: 1 60;
+      stroke-dashoffset: -30;
+    }
+  }
+
+  &__line {
+    transition:
+      stroke-dasharray var(--transition-duration-long)
+        cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset var(--transition-duration-long)
+        cubic-bezier(0.4, 0, 0.2, 1);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-dasharray: 60 207;
+
+    &--2 {
+      stroke-dasharray: 60 60;
+    }
+  }
+}

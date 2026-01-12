@@ -1,0 +1,10 @@
+.icon {
+  @include square-size(24px);
+
+  display: inline-flex;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}

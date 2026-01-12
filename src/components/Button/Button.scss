@@ -1,0 +1,40 @@
+.button {
+  --buttonTextColor: var(--color-white);
+  --buttonBgColor: var(--color-accent-light);
+  --buttonSpacing: 8px;
+  --buttonSpacingX: calc(var(--buttonSpacing) * 2);
+
+  @include flex-center(true);
+
+  column-gap: var(--buttonSpacing);
+
+  @include from-tablet {
+    height: 44px;
+  }
+
+  padding: var(--buttonSpacing) var(--buttonSpacingX);
+  color: var(--buttonTextColor);
+  background-color: var(--buttonBgColor);
+  border: var(--border);
+  border-color: currentColor;
+  border-radius: var(--border-radius);
+
+  @include hover {
+    --buttonTextColor: var(--color-accent);
+    --buttonBgColor: var(--color-white);
+
+    border-color: transparent;
+  }
+
+  &:disabled {
+    @include disabled;
+  }
+
+  &:has(.button__icon:only-child) {
+    padding: var(--buttonSpacing);
+  }
+
+  &--transparent {
+    --buttonBgColor: transparent;
+  }
+}
