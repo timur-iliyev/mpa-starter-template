@@ -1,0 +1,7 @@
+.tabs {
+  &__tab {
+    &:not(.is-active) {
+      display: none;
+    }
+  }
+}
