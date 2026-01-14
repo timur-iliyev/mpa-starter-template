@@ -1,4 +1,4 @@
-const tabsItems = [
+export default [
   {
     buttonLabel: 'Tima',
     title: 'Tima Karoche',
@@ -16,5 +16,3 @@ const tabsItems = [
     description: '@margaritafrolenko',
   },
 ]
-
-export default tabsItems
