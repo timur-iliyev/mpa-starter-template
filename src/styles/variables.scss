@@ -2,13 +2,13 @@
   --color-white: #ffffff;
   --color-black: #000000;
   --color-grey: #808080;
-  --color-accent: #290058;
+  --color-accent: #420093;
 
-  --color-grey-dark: hsl(from var(--color-grey) h s 10%);
-  --color-grey-light: hsl(from var(--color-grey) h s 85%);
+  --color-grey-dark: oklch(from var(--color-grey) 10% c h);
+  --color-grey-light: oklch(from var(--color-grey) 85% c h);
 
-  --color-accent-dark: hsl(from var(--color-accent) h s 10%);
-  --color-accent-light: hsl(from var(--color-accent) h s 65%);
+  --color-accent-dark: oklch(from var(--color-accent) 10% c h);
+  --color-accent-light: oklch(from var(--color-accent) 75% c h);
 
   --border-width-m: 4px;
   --border-width: 2px;
@@ -30,6 +30,10 @@
     )};
   --container-width: #{fluid($desktop-width, $min-viewport-width)};
 
+  --section-padding-y: #{fluid(
+      $section-padding-y-desktop,
+      $section-padding-y-mobile
+    )};
   --section-gap: #{fluid($section-gap-desktop, $section-gap-mobile)};
 
   --transition-duration: 0.2s;

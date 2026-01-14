@@ -54,8 +54,8 @@
 }
 
 @mixin square-size($size) {
-  width: $size;
   aspect-ratio: 1;
+  width: $size;
 }
 
 @mixin focus-visible {

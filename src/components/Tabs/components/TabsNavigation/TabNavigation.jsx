@@ -22,7 +22,7 @@ export default (props) => {
         return (
           <div
             className={clsx(
-              'tabs-navigation__button',
+              'tabs-navigation__button button button--transparent',
               isActive && 'is-active'
             )}
             id={buttonId}

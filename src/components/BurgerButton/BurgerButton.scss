@@ -1,6 +1,6 @@
 .burger-button {
   --burgerButtonTextColor: var(--color-white);
-  --burgerButtonBgColor: var(--color-accent-light);
+  --burgerButtonBgColor: var(--color-accent);
 
   @include flex-center(true);
   @include square-size(44px);

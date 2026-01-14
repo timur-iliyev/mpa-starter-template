@@ -25,19 +25,11 @@
 
   &__button {
     position: relative;
-    padding: 8px 16px;
-    border-radius: var(--border-radius);
     cursor: pointer;
     transition-duration: var(--transition-duration);
     user-select: none;
 
-    @include hover {
-      color: var(--color-white);
-      border-color: transparent;
-    }
-
     &.is-active {
-      color: var(--color-white);
       pointer-events: none;
     }
   }

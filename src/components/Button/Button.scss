@@ -1,6 +1,6 @@
 .button {
   --buttonTextColor: var(--color-white);
-  --buttonBgColor: var(--color-accent-light);
+  --buttonBgColor: var(--color-accent);
   --buttonSpacing: 8px;
   --buttonSpacingX: calc(var(--buttonSpacing) * 2);
 
@@ -36,5 +36,12 @@
 
   &--transparent {
     --buttonBgColor: transparent;
+
+    border: none;
+
+    @include hover {
+      --buttonTextColor: var(--color-accent-light);
+      --buttonBgColor: transparent;
+    }
   }
 }
