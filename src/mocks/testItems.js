@@ -15,4 +15,19 @@ export default [
     title: 'Porsche Panamera',
     description: 'Porsche Panamera is a luxury sedan.',
   },
+  {
+    buttonLabel: 'Taycan',
+    title: 'Porsche Taycan',
+    description: 'Porsche Taycan is an electric sports car.',
+  },
+  {
+    buttonLabel: 'Cayenne',
+    title: 'Porsche Cayenne',
+    description: 'Porsche Cayenne is a luxury SUV.',
+  },
+  {
+    buttonLabel: 'Macan',
+    title: 'Porsche Macan',
+    description: 'Porsche Macan is a compact luxury SUV.',
+  },
 ]
