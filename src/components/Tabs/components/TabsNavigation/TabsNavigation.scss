@@ -17,11 +17,11 @@
 
       &::before {
         content: '';
-        position: absolute;
-        inset: 0;
+        z-index: -1;
         background-color: var(--color-accent);
         border-radius: inherit;
-        z-index: -1;
+
+        @include abs-cover;
       }
     }
   }

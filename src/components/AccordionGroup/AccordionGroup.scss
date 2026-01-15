@@ -2,8 +2,8 @@
   --accordionGroupCounterHeight: 44px;
 
   &--has-counter {
-    counter-reset: custom-counter;
     list-style: none;
+    counter-reset: custom-counter;
 
     .accordion-group__item {
       display: flex;
@@ -11,7 +11,7 @@
       counter-increment: custom-counter;
 
       &::before {
-        @include flex-center();
+        @include flex-center;
 
         content: counter(custom-counter, decimal-leading-zero);
         min-width: 44px;
@@ -36,7 +36,7 @@
   }
 
   &__item {
-    padding: 16px;
     break-inside: avoid-column;
+    padding: 16px;
   }
 }

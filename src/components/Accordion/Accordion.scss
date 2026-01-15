@@ -1,8 +1,8 @@
 .accordion {
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 100%;
   cursor: pointer;
   user-select: none;
 
@@ -24,8 +24,8 @@
 
   &__title {
     position: relative;
-    padding-right: 32px;
     min-height: var(--accordionGroupCounterHeight);
+    padding-right: 32px;
 
     &::before,
     &::after {
