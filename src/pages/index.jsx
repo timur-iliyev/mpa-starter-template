@@ -1,10 +1,12 @@
 import Section from '@/layouts/Section'
-import Button from '@/components/Button'
 import TabsNavigation from '@/components/Tabs/components/TabsNavigation'
-import testItems from '@/components/Tabs/testItems'
+import testItems from '@/mocks/testItems'
 import Tabs from '@/components/Tabs'
 import Slider from '@/components/Slider'
 import SliderNavigation from '@/components/Slider/components/SliderNavigation'
+import AccordionGroup from '@/components/AccordionGroup'
+import Accordion from '@/components/Accordion'
+import getIdFromString from '@/utils/getIdFromString'
 
 export const metadata = {
   title: 'Home',
@@ -14,6 +16,22 @@ export default () => {
   return (
     <>
       <h1 className="visually-hidden">Home</h1>
+
+      <Section title="Accordion Group" titleId="accordion-group">
+        <AccordionGroup columns={2} isOrdered={true}>
+          {testItems.map(({ title, description }) => (
+            <Accordion
+              title={title}
+              id={getIdFromString(title)}
+              name="test-accordion-group"
+            >
+              <p>
+                <b>Description:</b> {description}
+              </p>
+            </Accordion>
+          ))}
+        </AccordionGroup>
+      </Section>
 
       <Section title="Tabs" titleId="tabs">
         <TabsNavigation
@@ -28,10 +46,11 @@ export default () => {
             children: (
               <>
                 <p>
-                  {testItem.title}'s nickname is{' '}
-                  {testItem.description}
+                  <b>Title:</b> {testItem.title}
                 </p>
-                <Button href="/" label={testItem.title} />
+                <p>
+                  <b>Description:</b> {testItem.description}
+                </p>
               </>
             ),
           }))}
@@ -42,16 +61,14 @@ export default () => {
         <SliderNavigation id="test-slider" hasPagination />
         <Slider navigationTargetElementId="test-slider">
           {testItems.map(({ title, description }) => (
-            <div
-              className="card"
-              style={{
-                backgroundColor: 'red',
-              }}
-            >
-              <p className="card__description">
-                {title} has {description} nickname
+            <>
+              <p>
+                <b>Title:</b> {title}
               </p>
-            </div>
+              <p>
+                <b>Description:</b> {description}
+              </p>
+            </>
           ))}
         </Slider>
       </Section>

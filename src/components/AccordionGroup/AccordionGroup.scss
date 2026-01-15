@@ -1,0 +1,42 @@
+.accordion-group {
+  --accordionGroupCounterHeight: 44px;
+
+  &--has-counter {
+    counter-reset: custom-counter;
+    list-style: none;
+
+    .accordion-group__item {
+      display: flex;
+      column-gap: 12px;
+      counter-increment: custom-counter;
+
+      &::before {
+        @include flex-center();
+
+        content: counter(custom-counter, decimal-leading-zero);
+        min-width: 44px;
+        height: var(--accordionGroupCounterHeight);
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--color-weight);
+        background-color: var(--color-grey);
+        border: var(--border);
+        border-radius: var(--border-radius);
+      }
+    }
+  }
+
+  &--2-columns {
+    column-count: 2;
+    column-gap: 16px;
+
+    @include from-tablet {
+      column-count: 1;
+    }
+  }
+
+  &__item {
+    padding: 16px;
+    break-inside: avoid-column;
+  }
+}
