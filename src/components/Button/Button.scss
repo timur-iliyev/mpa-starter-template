@@ -18,6 +18,7 @@
   border: var(--border);
   border-color: currentColor;
   border-radius: var(--border-radius);
+  user-select: none;
 
   @include hover {
     --buttonTextColor: var(--color-accent);

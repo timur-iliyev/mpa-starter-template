@@ -1,1 +1,1 @@
-export { default } from './TabNavigation'
+export { default } from './TabsNavigation'

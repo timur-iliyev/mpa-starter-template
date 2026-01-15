@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import './Tabs.scss'
 import getTabsElementsIdsFromButtonLabel from './utils/getTabsElementsIdsFromButtonLabel'
-import TabNavigation from './components/TabsNavigation/TabNavigation'
+import TabsNavigation from './components/TabsNavigation/TabsNavigation'
 
 export default (props) => {
   const {
@@ -18,7 +18,7 @@ export default (props) => {
     >
       {!navigationTargetElementId && (
         <div>
-          <TabNavigation items={items} titleId={titleId} />
+          <TabsNavigation items={items} titleId={titleId} />
         </div>
       )}
 

@@ -1,0 +1,28 @@
+.tabs-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  padding: 10px;
+  border: var(--border);
+  border-radius: var(--border-radius);
+
+  &__button {
+    position: relative;
+    cursor: pointer;
+    transition-duration: var(--transition-duration);
+    user-select: none;
+
+    &.is-active {
+      pointer-events: none;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: var(--color-accent);
+        border-radius: inherit;
+        z-index: -1;
+      }
+    }
+  }
+}

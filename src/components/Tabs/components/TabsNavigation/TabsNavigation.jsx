@@ -1,4 +1,4 @@
-import './TabNavigation.scss'
+import './TabsNavigation.scss'
 import clsx from 'clsx'
 import getTabsElementsIdsFromButtonLabel from '../../utils/getTabsElementsIdsFromButtonLabel'
 

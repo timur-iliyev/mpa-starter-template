@@ -1,5 +1,4 @@
 import getParams from '@/utils/getParams'
-import pxToRem from '@/utils/pxToRem'
 import BaseComponent from './generic/BaseComponent'
 
 const rootSelector = '[data-js-tabs]'
@@ -14,11 +13,6 @@ class Tabs extends BaseComponent {
 
   stateClasses = {
     isActive: 'is-active',
-  }
-
-  stateCssVariables = {
-    activeButtonWidth: '--tabsNavigationActiveButtonWidth',
-    activeButtonOffsetLeft: '--tabsNavigationActiveButtonOffsetLeft',
   }
 
   constructor(rootElement) {
@@ -59,10 +53,6 @@ class Tabs extends BaseComponent {
       )
       buttonElement.ariaSelected = isActive
       buttonElement.tabIndex = isActive ? 0 : -1
-
-      if (isActive) {
-        this.updateNavigationCssVars(buttonElement)
-      }
     })
 
     this.contentElements.forEach((contentElement, index) => {
@@ -74,26 +64,6 @@ class Tabs extends BaseComponent {
       )
       contentElement.setAttribute('aria-hidden', String(!isActive))
     })
-  }
-
-  updateNavigationCssVars(
-    activeButtonElement = this.buttonElements[
-      this.state.activeTabIndex
-    ]
-  ) {
-    const { width, left } =
-      activeButtonElement.getBoundingClientRect()
-    const offsetLeft =
-      left - this.navigationElement.getBoundingClientRect().left
-
-    this.navigationElement.style.setProperty(
-      this.stateCssVariables.activeButtonWidth,
-      `${pxToRem(width)}rem`
-    )
-    this.navigationElement.style.setProperty(
-      this.stateCssVariables.activeButtonOffsetLeft,
-      `${pxToRem(offsetLeft)}rem`
-    )
   }
 
   activateTab(newTabIndex) {
@@ -175,16 +145,6 @@ class Tabs extends BaseComponent {
     })
 
     document.addEventListener('keydown', this.onKeyDown)
-  }
-
-  onResize = () => {
-    this.updateNavigationCssVars()
-  }
-
-  bindObservers = () => {
-    const resizeObserver = new ResizeObserver(this.onResize)
-
-    resizeObserver.observe(this.navigationElement)
   }
 }
 
