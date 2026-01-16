@@ -31,7 +31,7 @@
     background-color: var(--color-black);
     border: var(--border);
     border-radius: var(--border-radius);
-    
+
     @include hover {
       border-color: var(--color-accent-light);
     }
@@ -46,7 +46,7 @@
   }
 
   textarea.field__control {
-    resize: vertical;
     min-height: calc(var(--controlHeight) * 3);
+    resize: vertical;
   }
 }

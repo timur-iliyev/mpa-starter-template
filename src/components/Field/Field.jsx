@@ -16,7 +16,7 @@ export default (props) => {
   } = props
 
   const Component = type === 'textarea' ? 'textarea' : 'input'
-  
+
   const extraAttributes = {}
   if (mask) {
     extraAttributes['data-js-input-mask'] = mask

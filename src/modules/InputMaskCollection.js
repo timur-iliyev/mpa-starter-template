@@ -1,5 +1,5 @@
-import getDataAttrNameFromSelector from "@/utils/getDataAttrNameFromSelector"
-import IMask from "imask"
+import getDataAttrNameFromSelector from '@/utils/getDataAttrNameFromSelector'
+import IMask from 'imask'
 
 const rootSelector = '[data-js-input-mask]'
 
