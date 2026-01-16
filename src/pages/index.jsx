@@ -7,6 +7,8 @@ import SliderNavigation from '@/components/Slider/components/SliderNavigation'
 import AccordionGroup from '@/components/AccordionGroup'
 import Accordion from '@/components/Accordion'
 import getIdFromString from '@/utils/getIdFromString'
+import Field from '@/components/Field'
+import AnimatedLink from '@/components/AnimatedLink'
 
 export const metadata = {
   title: 'Home',
@@ -25,7 +27,7 @@ export default () => {
               id={getIdFromString(title)}
               name="test-accordion-group"
             >
-              <p>
+              <p className="item-description">
                 <b>Description:</b> {description}
               </p>
             </Accordion>
@@ -45,10 +47,10 @@ export default () => {
             ...testItem,
             children: (
               <>
-                <p>
+                <p className="item-title">
                   <b>Title:</b> {testItem.title}
                 </p>
-                <p>
+                <p className="item-description">
                   <b>Description:</b> {testItem.description}
                 </p>
               </>
@@ -58,20 +60,60 @@ export default () => {
       </Section>
 
       <Section title="Slider" titleId="slider">
-        <SliderNavigation id="test-slider" hasPagination />
         <Slider navigationTargetElementId="test-slider">
           {testItems.map(({ title, description }) => (
             <>
-              <p>
+              <p className="item-title">
                 <b>Title:</b> {title}
               </p>
-              <p>
+              <p className="item-description">
                 <b>Description:</b> {description}
               </p>
             </>
           ))}
         </Slider>
+        <SliderNavigation id="test-slider" hasPagination />
       </Section>
+
+      <Section title="Fields" titleId="fields">
+        <form action="" className="test-form">
+          <Field
+            className="test-form__cell"
+            label="First Name"
+            placeholder="Timur"
+            isRequired
+          />
+          <Field
+            className="test-form__cell"
+            label="Last Name"
+            placeholder="Iliyev"
+          />
+          <Field
+            className="test-form__cell"
+            label="Email"
+            placeholder="example@example.com"
+            type="email"
+            isRequired
+          />
+          <Field
+            className="test-form__cell"
+            label="Phone Number"
+            placeholder="999 999-999"
+            type="tel"
+            inputMode="tel"
+            mask="+{42\0} 000 000-000"
+            isRequired
+          />
+          <Field
+            className="test-form__cell test-form__cell--wide"
+            label="Message"
+            placeholder="I have a question..."
+            type="textarea"
+          />
+        </form>
+      </Section>
+
+      <AnimatedLink label="Tima Karoche" href="/" />
     </>
   )
 }

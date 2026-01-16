@@ -1,0 +1,21 @@
+.animated-link {
+  --charPositionY: 0;
+
+  overflow-y: hidden;
+  display: inline-block;
+  height: max-content;
+  text-shadow: var(--color-accent-light) 0 3ex;
+  color: var(--color-white);
+
+  @include hover {
+    .animated-link__char {
+      --charPositionY: -3ex;
+    }
+  }
+
+  &__char {
+    display: inline-block;
+    transition: translate var(--transition-duration-long) ease;
+    translate: 0 var(--charPositionY);
+  }
+}
