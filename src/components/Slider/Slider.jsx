@@ -5,7 +5,6 @@ import SliderNavigation from './components/SliderNavigation'
 const defaultSliderParams = {
   slidesPerView: 1,
   slidesPerGroup: 1,
-  // spaceBetween: 16,
 }
 
 export default (props) => {

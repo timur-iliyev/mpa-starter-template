@@ -1,6 +1,6 @@
 import './Table.scss'
 
-export default(props) => {
+export default (props) => {
   const { className, headCells = [], rows = [] } = props
 
   return (
@@ -8,21 +8,17 @@ export default(props) => {
       {headCells.length > 0 && (
         <thead>
           <tr>
-            {headCells.map(({children, width}) => (
-              <th width={width}>
-                {children}
-              </th>
+            {headCells.map(({ children, width }) => (
+              <th width={width}>{children}</th>
             ))}
           </tr>
         </thead>
       )}
       <tbody>
-        {rows.map(({cells}) => (
+        {rows.map(({ cells }) => (
           <tr>
             {cells.map((cell) => (
-              <td>
-                {cell}
-              </td>
+              <td>{cell}</td>
             ))}
           </tr>
         ))}

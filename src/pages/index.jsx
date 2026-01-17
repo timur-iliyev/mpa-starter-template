@@ -144,7 +144,7 @@ export default () => {
       </Section>
 
       <Section title="Table" titleId="table">
-        <Table 
+        <Table
           className="hidden-tablet"
           headCells={tableData.headCells}
           rows={tableData.rows}

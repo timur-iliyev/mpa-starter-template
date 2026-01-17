@@ -1,7 +1,6 @@
 @use 'constants' as *;
 @use 'sass:math';
 
-// // –––––––––––––––––––– Fluid From: ––––––––––––––––––––
 @function fluid($max, $min, $from: 'desktop') {
   $maxViewportWidth: $desktop-width;
   $minViewportWidth: $min-viewport-width;
@@ -40,8 +39,6 @@
 @function fluid-from-mobile($max, $min) {
   @return fluid($max, $min, 'mobile');
 }
-
-// // –––––––––––––––––––– Fluid To: ––––––––––––––––––––
 @function fluid-to($max, $min, $to) {
   $maxViewportWidth: $desktop-width;
   $minViewportWidth: $min-viewport-width;

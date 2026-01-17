@@ -85,13 +85,9 @@
     top: calc(100% + 4px);
     overflow-y: auto;
     overscroll-behavior: none;
-
-    // display: grid;
-    // row-gap: 4px;
     min-width: 320px;
     max-height: 256px;
 
-    // padding: 4px;
     background-color: var(--color-black);
     border: var(--border);
     border-radius: var(--border-radius);
@@ -121,12 +117,8 @@
     column-gap: 10px;
     padding: 10px;
 
-    // border-radius: inherit;
-
     @include hover {
       color: var(--color-white);
-
-      // border-color: var(--color-white);
     }
 
     &:nth-child(2n) {
