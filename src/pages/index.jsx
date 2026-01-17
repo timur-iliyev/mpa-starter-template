@@ -9,6 +9,8 @@ import Accordion from '@/components/Accordion'
 import getIdFromString from '@/utils/getIdFromString'
 import Field from '@/components/Field'
 import AnimatedLink from '@/components/AnimatedLink'
+import Checkbox from '@/components/Checkbox'
+import Select from '@/components/Select'
 
 export const metadata = {
   title: 'Home',
@@ -103,6 +105,27 @@ export default () => {
             inputMode="tel"
             mask="+{42\0} 000 000-000"
             isRequired
+            renderBefore={(buttonClassName) => (
+              <Select
+                label="Phone number prefix"
+                buttonClassName={buttonClassName}
+                options={[
+                  {
+                    value: '+420',
+                    isSelected: true,
+                  },
+                  {
+                    value: '+1',
+                  },
+                  {
+                    value: '+2',
+                  },
+                  {
+                    value: '+3',
+                  },
+                ]}
+              />
+            )}
           />
           <Field
             className="test-form__cell test-form__cell--wide"
@@ -110,6 +133,7 @@ export default () => {
             placeholder="I have a question..."
             type="textarea"
           />
+          <Checkbox label="test checkbox" isRequired />
         </form>
       </Section>
 

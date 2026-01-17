@@ -1,5 +1,5 @@
-import getIdFromString from '@/utils/getIdFromString'
 import './Field.scss'
+import getIdFromString from '@/utils/getIdFromString'
 import clsx from 'clsx'
 
 export default (props) => {
@@ -13,6 +13,7 @@ export default (props) => {
     autocomplete = 'off',
     inputMode,
     mask,
+    renderBefore,
   } = props
 
   const Component = type === 'textarea' ? 'textarea' : 'input'
@@ -33,6 +34,7 @@ export default (props) => {
         )}
       </label>
       <div className="field__body">
+        {renderBefore?.('field__control')}
         <Component
           className="field__control"
           id={id}
