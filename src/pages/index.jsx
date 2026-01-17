@@ -11,6 +11,8 @@ import Field from '@/components/Field'
 import AnimatedLink from '@/components/AnimatedLink'
 import Checkbox from '@/components/Checkbox'
 import Select from '@/components/Select'
+import Table from '@/components/Table'
+import tableData from '@/mocks/tableData'
 
 export const metadata = {
   title: 'Home',
@@ -137,7 +139,17 @@ export default () => {
         </form>
       </Section>
 
-      <AnimatedLink label="Tima Karoche" href="/" />
+      <Section title="AnimatedLink" titleId="animated-link">
+        <AnimatedLink label="Tima Karoche" href="/" />
+      </Section>
+
+      <Section title="Table" titleId="table">
+        <Table 
+          className="hidden-tablet"
+          headCells={tableData.headCells}
+          rows={tableData.rows}
+        />
+      </Section>
     </>
   )
 }

@@ -1,0 +1,35 @@
+table {
+  --tableBorder: var(--border);
+
+  border: var(--tableBorder);
+  border-collapse: separate;
+  border-radius: var(--border-radius);
+
+  thead {
+    background-color: var(--color-black);
+  }
+
+  tbody {
+    tr:last-child {
+      td {
+        border-bottom: none;
+      }
+    }
+  }
+
+  th,
+  td {
+    padding: 8px;
+    border-bottom: var(--tableBorder);
+
+    &:not(:last-child) {
+      border-right: var(--tableBorder);
+    }
+  }
+  
+  th {
+    font-weight: 600;
+    color: var(--color-white);
+    text-align: left;
+  }
+}
