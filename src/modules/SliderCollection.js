@@ -60,7 +60,7 @@ class Slider {
   }
 }
 
-class SliderCollection {
+export default class SliderCollection {
   constructor() {
     this.init()
   }
@@ -71,5 +71,3 @@ class SliderCollection {
     })
   }
 }
-
-export default SliderCollection

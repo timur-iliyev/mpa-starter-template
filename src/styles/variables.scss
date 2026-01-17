@@ -4,7 +4,7 @@
   --color-grey: #808080;
   --color-accent: #420093;
 
-  --color-grey-dark: oklch(from var(--color-grey) 10% c h);
+  --color-grey-dark: oklch(from var(--color-grey) 20% c h);
   --color-grey-light: oklch(from var(--color-grey) 85% c h);
 
   --color-accent-dark: oklch(from var(--color-accent) 10% c h);
