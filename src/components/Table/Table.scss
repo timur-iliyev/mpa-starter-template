@@ -2,8 +2,8 @@ table {
   --tableBorder: var(--border);
 
   border: var(--tableBorder);
-  border-collapse: separate;
   border-radius: var(--border-radius);
+  border-collapse: separate;
 
   thead {
     background-color: var(--color-black);
@@ -29,7 +29,7 @@ table {
 
   th {
     font-weight: 600;
-    color: var(--color-white);
     text-align: left;
+    color: var(--color-white);
   }
 }
