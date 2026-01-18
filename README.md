@@ -9,7 +9,7 @@ Built on the [Minista](https://minista.qranoko.jp/) static site generator framew
 To create a new project from this template:
 
 ```bash
-npm create mpa-starter-template@latest
+npm create mpa
 ```
 
 ## Table of Contents
