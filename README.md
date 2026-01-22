@@ -75,7 +75,7 @@ The template includes:
 
 ### Getting Started
 
-1. **Run**: `npm create mpa-starter-template@latest`
+1. **Run**: `npm create mpa`
 2. **Install dependencies**: `npm install`
 3. **Start development server**: `npm start`
 4. **Open in browser**: Navigate to `http://localhost:5173` (Vite default)
